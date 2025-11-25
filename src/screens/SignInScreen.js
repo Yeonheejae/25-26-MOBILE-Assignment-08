@@ -1,11 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
 import { Platform, StyleSheet, View, Pressable, Keyboard, KeyboardAvoidingView, Alert } from 'react-native';
 import LogoImage from '../components/LogoImage';
 import CustomInput from '../components/CustomInput';
 import { KeyboardTypes } from '../components/CustomInput';
 import Button from '../components/Button';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { LoginAsync } from "../api/auth";
+import { UserContext } from '../contexts/UserContext';
+
 
 
 const SignInScreen = ({navigation}) => {
@@ -14,6 +15,13 @@ const SignInScreen = ({navigation}) => {
     const [password, setPassword] = useState('');
     const [disabled,setDisabled] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
+    const { setUser } = useContext(UserContext);
+
+    useEffect(() => {
+        navigation.setOptions({
+            headerShown:false
+        })
+    })
 
     useEffect(() => {
         setDisabled(!email || !password);
@@ -26,9 +34,11 @@ const SignInScreen = ({navigation}) => {
                 setIsLoading(true);
                 const success = await LoginAsync(email, password)
                 console.log(success);
-                Alert.alert('로그인 성공', success, [
-                    {text:'okie', onPress: () => navigation.push('List')},
-                ])
+                setUser(success);
+                Alert.alert(`${success.name} 반갑습니다!`,
+                    `${success.email}`,
+                    [{text:'okie', onPress: () => navigation.push('List')}]
+                );
             } catch(fail) {
                 console.log(fail);
                 Alert.alert('로그인 실패', fail);

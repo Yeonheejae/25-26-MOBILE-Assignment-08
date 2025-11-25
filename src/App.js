@@ -1,12 +1,15 @@
 import { View,StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import AuthStack from './navigations/AuthStack';
+import { UserProvider } from './contexts/UserContext';
 
 function App() {
     return(
-        <NavigationContainer>
-            <AuthStack/>
-        </NavigationContainer>
+        <UserProvider>
+            <NavigationContainer>
+                <AuthStack/>
+            </NavigationContainer>
+        </UserProvider>
     )
 }
 
