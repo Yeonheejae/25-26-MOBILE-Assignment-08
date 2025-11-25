@@ -1,4 +1,5 @@
 # Organizer
+<<<<<<< HEAD
 * @kjoon418
 * @junseok0304
 
@@ -7,6 +8,12 @@
 * @bomin0214
 * @TwooTwoo
 * @ggok0265
+=======
+* @kjoon418 @junseok0304
+
+# Backend
+* @jihoo2002 @bomin0214 @TwooTwoo @ggok0265
+>>>>>>> 660139d91d627c7a3dec8c41349bb6ebd06fc1d7
 
 # Web
 * @ten0213
@@ -15,8 +22,12 @@
 * @Han6262
 
 # PM
+<<<<<<< HEAD
 * @iamseoyoung
 * @tto-oy
+=======
+* @iamseoyoung @tto-oy
+>>>>>>> 660139d91d627c7a3dec8c41349bb6ebd06fc1d7
 
 # Design
 * @hyeonji44

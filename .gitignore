@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
 # dependencies
@@ -39,3 +40,14 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+=======
+# 윈도우 사용자
+desktop.ini
+Thumbs.db
+
+# 맥 사용자
+._*
+.DS_Store
+.Spotlight-V100
+.Trashes
+>>>>>>> 660139d91d627c7a3dec8c41349bb6ebd06fc1d7
